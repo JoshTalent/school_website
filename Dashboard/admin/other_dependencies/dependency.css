@@ -1,0 +1,46 @@
+
+.cardes{
+    border: 1px solid rgba(0, 0, 0, 40%);
+    max-width: 300px;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.155);
+    padding-bottom: 20px;
+    display: inline-block;
+}
+.cardes img{
+    top: 0;
+    left: 0;
+    right: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    object-fit: cover;
+}
+.cardes h2{
+    font-family: arial , sans-serif;
+    font-size: large;
+    text-align: center;
+}
+.cardes p{
+    color: rgba(0, 0, 0, 0.493);
+    font-family: arial , sans-serif;
+    text-align: center;
+}
+.cardes .btn{
+    width:100%;
+    display: flex;
+    justify-content: space-around;
+}
+.cardes .btn button{
+    width: 40%;
+    padding: 10px 30px;
+    border: none;
+    color: white;
+    border-radius: 7px;
+}
+.cardes .btn button:first-child{
+    background-color: red;
+}
+.cardes .btn button:last-child{
+    background-color: green;
+}
