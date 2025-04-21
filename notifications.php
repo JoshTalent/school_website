@@ -23,7 +23,7 @@
             <?php
             include('connect.php');
 
-            $sql = "SELECT `title`, `notification` ,`created_at` FROM `st_info` ORDER BY id DESC ";
+            $sql = "SELECT `title`, `notification` ,`created_at` FROM `notifications` ORDER BY id DESC ";
 
             $query = mysqli_query($con, $sql);
 

@@ -110,7 +110,7 @@
                             $sub = $_POST["subject"];
                             $message = $_POST["message"];
 
-                            $sql = "INSERT INTO `dos_out_rep`( `name`, `email`, `subject`, `message`) VALUES ('$name','$email','$sub','$message')";
+                            $sql = "INSERT INTO `report`( `name`, `email`, `subject`, `message`) VALUES ('$name','$email','$sub','$message')";
 
 
                             $res = mysqli_query($con, $sql);

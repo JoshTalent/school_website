@@ -1,79 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php include('../component/head.php') ?>
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-<body class="index-page">
-
-    <?php include('../component/dos_header.php'); ?>
+  <title>Dashboard - GSP</title>
 
 
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <main class="main" id="main">
-        <div class="row">
-            <div class="col-md-12 mydashboard">
-                <h1>Welcome to <span>GSP</span> Dashboard</h1>
-                <p>Manage GSP Account Through Here</p>
-                <div class="row">
-                    <div class="col-md-12 p-4 d-flex justify-content-center">
-                        <a href="logout.php" class="btn btn-primary btn-sm text-primary px-4 text-white">BACK TO MAIN
-                            WEBSITE</a>
-                    </div>
-                </div>
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
 
-            </div>
-        </div>
-    </main>
-    <style>
-    .mydashboard {
-        height: 80vh;
-        padding: 30px;
-        background: aliceblue;
-        color: white;
-        background-image: url(../../Dashboard/admin/image/school.PNG);
-        background-repeat: no-repeat;
-        background-size: 100%;
-    }
 
-    .mydashboard h1 {
-        font-size: 320%;
-        text-align: center;
-        font-family: arial;
-        font-weight: bold;
-        color: rgb(255, 255, 255);
-        margin-top: 15%;
-        ;
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
 
-    }
+</head>
 
-    .mydashboard h1 span {
-        color: blue;
-        font-family: agency FB;
-    }
+<body>
 
-    .mydashboard p {
-        text-align: center;
-
-    }
-    </style>
+  <!-- ======= Header components with aside bar ======= -->
+          <?php include('../component/header.php') ?>
+   <!-- ======= Header Components Ends ======= -->
 
 
 
-    <footer id="footer" class="footer position-relative light-background">
+<main class="main" id="main">
 
-
-
-        <div class="container copyright text-center mt-4">
-            <p>© <span>Copyright</span> <strong class="px-1 sitename">GS Des Parents</strong> <span>All Rights
-                    Reserved</span></p>
-            <div class="credits">
-                Designed by <a href="https://linktr.ee/gnintellex">GN IntelleX</a>
-            </div>
-        </div>
-
-    </footer>
-
-    <?php include('../component/footer.php') ?>
+</main>
+  <!-- ======= Footer Start======= -->
+  <?php include('../component/footer.php') ?>
+   <!-- ======= Footer Ends ======= -->
 
 </body>
 

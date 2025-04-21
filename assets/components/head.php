@@ -29,6 +29,7 @@
     <!-- Main CSS File -->
     <link href="./assets/css/main.css" rel="stylesheet">
     <link href="./assets/css/next.css" rel="stylesheet">
+    <link  href="../../Dashbord/admin/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/other.css">
     <link rel="stylesheet" href="../../Dashboard/admin/other_dependencies/dependency.css">
     <link rel="stylesheet" href="../../assets/files/swiper/swiper-bundle.min.css">

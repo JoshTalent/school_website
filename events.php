@@ -27,7 +27,7 @@
                 <?php
         include('connect.php');
 
-        $sql = "SELECT  `title`,  `image` FROM `school` ORDER BY id DESC  ";
+        $sql = "SELECT  `title`,  `image` FROM `archive` ORDER BY id DESC  ";
 
         $query = mysqli_query($con, $sql);
 

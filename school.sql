@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 28, 2025 at 10:02 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Apr 21, 2025 at 03:53 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,23 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dos_out_rep`
+-- Table structure for table `archive`
 --
 
-CREATE TABLE `dos_out_rep` (
+CREATE TABLE `archive` (
   `id` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `email` varchar(250) NOT NULL,
-  `subject` varchar(200) NOT NULL,
-  `message` text NOT NULL
+  `title` varchar(100) NOT NULL,
+  `image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `dos_out_rep`
+-- Dumping data for table `archive`
 --
 
-INSERT INTO `dos_out_rep` (`id`, `name`, `email`, `subject`, `message`) VALUES
-(9, 'tjeice', 'rwishyuraserge@gmail.com', 'letter', 'nbm,.');
+INSERT INTO `archive` (`id`, `title`, `image`) VALUES
+(19, 'student in dinning hall', './image/WhatsApp Image 2025-02-18 at 1.01.19 PM (1).jpeg'),
+(22, 'in the class room', './image/WhatsApp Image 2025-02-18 at 1.07.06 PM (1).jpeg'),
+(24, 'python', './image/pexels-allstar-photography-2149762130-30779856.jpg'),
+(27, 'python', './image/SCHOLARSHIP PROGRAM FLYER - Made with PosterMyWall.jpg'),
+(28, 'er', './image/leanwithgn.png'),
+(29, 'sd', './image/leanwithgn.png'),
+(30, 'send', './image/'),
+(31, '2026', './image/');
 
 -- --------------------------------------------------------
 
@@ -56,37 +61,49 @@ CREATE TABLE `gallery` (
   `image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
 --
--- Dumping data for table `gallery`
+-- Table structure for table `notifications`
 --
 
-INSERT INTO `gallery` (`id`, `title`, `thumbnail`, `type`, `image`) VALUES
-(4, 'python', './image/pexels-alamin-teslim-ayomide-429127959-30124996.jpg', 'gallery', './image/WhatsApp Video 2025-02-19 at 7.22.34 AM.mp4'),
-(5, 'python', './image/pexels-alipli-24206767.jpg', 'best', './image/WhatsApp Video 2025-02-19 at 7.22.46 AM.mp4'),
-(6, 'python', './image/pexels-allstar-photography-2149762130-30779856.jpg', 'best', './image/pexels-allstar-photography-2149762130-30779856.jpg'),
-(7, 'python', './image/WhatsApp Image 2025-02-18 at 11.29.15 AM.jpeg', 'gallery', './image/WhatsApp Image 2025-02-18 at 11.29.15 AM.jpeg');
+CREATE TABLE `notifications` (
+  `id` int(11) NOT NULL,
+  `title` varchar(250) NOT NULL,
+  `notification` text NOT NULL,
+  `created_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `notifications`
+--
+
+INSERT INTO `notifications` (`id`, `title`, `notification`, `created_at`) VALUES
+(14, '2f', '2f3', '2025-02-22 08:07:50'),
+(15, 'ccssac', 'you all student we are reminding that time learn will be on 29 February dont be late ', '2025-02-22 08:09:52'),
+(16, 'hell', 'jnkf', '2025-04-17 13:23:21'),
+(17, 'hello', 'asd', '2025-04-17 13:25:18');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `school`
+-- Table structure for table `report`
 --
 
-CREATE TABLE `school` (
+CREATE TABLE `report` (
   `id` int(11) NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `image` varchar(200) NOT NULL
+  `name` varchar(100) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `subject` varchar(200) NOT NULL,
+  `message` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `school`
+-- Dumping data for table `report`
 --
 
-INSERT INTO `school` (`id`, `title`, `image`) VALUES
-(19, 'student in dinning hall', './image/WhatsApp Image 2025-02-18 at 1.01.19 PM (1).jpeg'),
-(22, 'in the class room', './image/WhatsApp Image 2025-02-18 at 1.07.06 PM (1).jpeg'),
-(24, 'python', './image/pexels-allstar-photography-2149762130-30779856.jpg'),
-(27, 'python', './image/SCHOLARSHIP PROGRAM FLYER - Made with PosterMyWall.jpg');
+INSERT INTO `report` (`id`, `name`, `email`, `subject`, `message`) VALUES
+(11, 'kabaye', 'gatarepatrick05@gmail.com', 'letter', 'wertypoiuyhtfgdrsqwertyghujkl;lkjhmgfbdvsaASDFGH');
 
 -- --------------------------------------------------------
 
@@ -115,54 +132,7 @@ CREATE TABLE `school_info` (
 --
 
 INSERT INTO `school_info` (`name`, `image`, `email`, `about`, `location`, `phone`, `headmaster`, `pobox`, `facebook`, `instagram`, `x`, `linked`, `password`) VALUES
-('GS DES PARENTS', './image/Online course Blog header - Made with PosterMyWall.jpg', 'gsphuye@yahoo.fr', 'Welcome To Gs des Parents a school dedicated to excellence in education , with qualified teachers , a strong curriculum and modern facilitates . we provide supportive and inclusive learning environment . we nurture creativity leadership and career ', 'RWANDA , HUYE', 89234567, 'Array', 'PO4U3U', 'JNFVJO', 'https://instagram.com/#', 'JVNDFJDFNVO', 'https://linkedin.com/#', '9de37a0627c25684fdd519ca84073e34');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `students`
---
-
-CREATE TABLE `students` (
-  `id` int(11) NOT NULL,
-  `f_name` varchar(250) NOT NULL,
-  `l_name` varchar(250) NOT NULL,
-  `class` varchar(200) NOT NULL,
-  `email` varchar(20) NOT NULL,
-  `address` varchar(100) NOT NULL,
-  `gender` varchar(30) NOT NULL,
-  `password` varchar(232) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `students`
---
-
-INSERT INTO `students` (`id`, `f_name`, `l_name`, `class`, `email`, `address`, `gender`, `password`) VALUES
-(10, 'ntwari', 'josue', 'l5sod', 'ntwarijosue5@gmail.c', 'kimisagara', 'male', '1234'),
-(11, 'ntwari', 'josue', 'l3dod', 'ntwarijosue5@gmail.c', 'kimisagara', 'male', '123'),
-(12, 'gary', 'glacker', 'l4sod', 'gary@gmail.com', 'kigali', 'male', '1234');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `st_info`
---
-
-CREATE TABLE `st_info` (
-  `id` int(11) NOT NULL,
-  `title` varchar(250) NOT NULL,
-  `notification` text NOT NULL,
-  `created_at` datetime DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `st_info`
---
-
-INSERT INTO `st_info` (`id`, `title`, `notification`, `created_at`) VALUES
-(14, '2f', '2f3', '2025-02-22 08:07:50'),
-(15, 'ccssac', 'you all student we are reminding that time learn will be on 29 February dont be late ', '2025-02-22 08:09:52');
+('GS DES PARENTS', './image/Online course Blog header - Made with PosterMyWall.jpg', 'gsphuye@yahoo.fr', 'Welcome To Gs des Parents a school dedicated to excellence in education , with qualified teachers , a strong curriculum and modern facilitates . we provide supportive and inclusive learning environment . we nurture creativity leadership and career ', 'RWANDA , HUYE', 89234567, 'Array', 'PO4U3U', 'JNFVJO', 'https://instagram.com/#', 'JVNDFJDFNVO', 'https://linkedin.com/#', '81dc9bdb52d04dc20036dbd8313ed055');
 
 -- --------------------------------------------------------
 
@@ -188,28 +158,7 @@ CREATE TABLE `teachers` (
 INSERT INTO `teachers` (`id`, `name`, `email`, `category`, `phone`, `gender`, `image`, `proffession`) VALUES
 (75, 'Etienne NIZEYIMANA', 'ntwarijosue5@gmail.com', 'administrator', 783937376, '', './image/trainer-2.jpg', 'Displine Master'),
 (76, ' Marie Claire UMURERWA', 'ntwarijosue5@gmail.com', 'administrator', 785007972, '', './image/secretaire.jpg', 'Secretary'),
-(77, 'Janviere UMULISA', 'ntwarijosue5@gmail.com', 'administrator', 780802721, '', './image/comptable.jpg', 'Accountant'),
-(78, 'Donathile MUKAYIRANGA', 'ntwarijosue5@gmail.com', 'administrator', 786003991, '', './image/HM (2).jpg', 'School Manager');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tea_st_rep`
---
-
-CREATE TABLE `tea_st_rep` (
-  `id` int(11) NOT NULL,
-  `title` varchar(250) NOT NULL,
-  `report` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tea_st_rep`
---
-
-INSERT INTO `tea_st_rep` (`id`, `title`, `report`) VALUES
-(1, 'dd', 'cdcd dd s sd sd d s xs sd  df'),
-(2, 'hello ', 'dos am josue');
+(77, 'Janviere UMULISA', 'ntwarijosue5@gmail.com', '', 780802721, '', './image/FB_IMG_16912516086008035.jpg', 'qwaesrdtfyuiokljhgvbcfxz');
 
 -- --------------------------------------------------------
 
@@ -220,7 +169,7 @@ INSERT INTO `tea_st_rep` (`id`, `title`, `report`) VALUES
 CREATE TABLE `uploads` (
   `id` int(11) NOT NULL,
   `title` varchar(250) NOT NULL,
-  `discription` varchar(250) NOT NULL,
+  `discription` varchar(50) NOT NULL,
   `image` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -229,17 +178,18 @@ CREATE TABLE `uploads` (
 --
 
 INSERT INTO `uploads` (`id`, `title`, `discription`, `image`) VALUES
-(49, 'python', '    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates eius quibusdam soluta possimus vero hic nisi nihil doloremque quia facilis! Ad nemo, nesciunt beatae quae cum ipsa debitis. Aperiam, natus?    Lorem ipsum dolor sit amet consecte', './image/JavaScriptNotesForProfessionals.pdf'),
-(50, 'python', 'sdfghjkl;kjhgfdfghjkl;lkjhgfdfghjk', './image/NodeJSNotesForProfessionals.pdf');
+(50, 'python', 'sdfghjkl;kjhgfdfghjkl;lkjhgfdfghjk', './image/NodeJSNotesForProfessionals.pdf'),
+(51, 'kabaye', 'qwertyuilkj,mhnfbgvdcsx', './image/ASOL BUSINESS.pdf'),
+(54, 'UMWANA', 'SESE BEB', './image/');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `dos_out_rep`
+-- Indexes for table `archive`
 --
-ALTER TABLE `dos_out_rep`
+ALTER TABLE `archive`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -249,9 +199,15 @@ ALTER TABLE `gallery`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `school`
+-- Indexes for table `notifications`
 --
-ALTER TABLE `school`
+ALTER TABLE `notifications`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `report`
+--
+ALTER TABLE `report`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -261,27 +217,9 @@ ALTER TABLE `school_info`
   ADD PRIMARY KEY (`name`);
 
 --
--- Indexes for table `students`
---
-ALTER TABLE `students`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `st_info`
---
-ALTER TABLE `st_info`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `teachers`
 --
 ALTER TABLE `teachers`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tea_st_rep`
---
-ALTER TABLE `tea_st_rep`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -295,52 +233,40 @@ ALTER TABLE `uploads`
 --
 
 --
--- AUTO_INCREMENT for table `dos_out_rep`
+-- AUTO_INCREMENT for table `archive`
 --
-ALTER TABLE `dos_out_rep`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+ALTER TABLE `archive`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `school`
+-- AUTO_INCREMENT for table `notifications`
 --
-ALTER TABLE `school`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+ALTER TABLE `notifications`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `students`
+-- AUTO_INCREMENT for table `report`
 --
-ALTER TABLE `students`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
-
---
--- AUTO_INCREMENT for table `st_info`
---
-ALTER TABLE `st_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+ALTER TABLE `report`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=80;
-
---
--- AUTO_INCREMENT for table `tea_st_rep`
---
-ALTER TABLE `tea_st_rep`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `uploads`
 --
 ALTER TABLE `uploads`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
