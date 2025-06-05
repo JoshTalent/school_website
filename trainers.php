@@ -34,59 +34,65 @@
 
                 $query = mysqli_query($con, $sql);
                 while ($row = mysqli_fetch_array($query)) {
-
                     $categ = $row['category'];
-                    if ($categ  == "administrator") {
-
-
+                    if ($categ == "administrator") {
                 ?>
-
-                <div class="cardes">
-                    <img src="./Dashboard/admin/<?php echo $row['image']; ?>" alt="" srcset="" height="300px"
-                        width="300px">
-                    <h4><?php echo $row['name']; ?></h4>
-                    <p><?php echo $row['proffession'] ?></p>
-                    <p>+250<?php echo $row['phone'] ?></p>
-
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm hover-shadow border-0">
+                        <div class="position-relative">
+                            <img src="./Dashboard/admin/<?php echo $row['image']; ?>" class="card-img-top" alt="<?php echo $row['name']; ?>" 
+                                style="height: 300px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 p-3">
+                                <span class="badge bg-primary">Administrator</span>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title"><?php echo $row['name']; ?></h4>
+                            <p class="card-text text-muted mb-2"><?php echo $row['proffession'] ?></p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i class="bi bi-telephone me-2 text-primary"></i>
+                                <p class="mb-0">+250<?php echo $row['phone'] ?></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <?php }
                 } ?>
-
 
                 <div class="container section-title" data-aos="fade-up">
-                    <h2>Trainers</h2>
-                    <p>Check Our Trainers</p>
-                </div><!-- End Section Title -->
+                    <h2>Our Trainers</h2>
+                    <p>Meet Our Expert Team</p>
+                </div>
+
                 <?php
-
                 $sql = "SELECT * FROM `teachers`";
-
                 $query = mysqli_query($con, $sql);
                 while ($row = mysqli_fetch_array($query)) {
-
                     $cate = $row['category'];
-                    if ($cate  == "trainer") {
-
-
+                    if ($cate == "trainer") {
                 ?>
-
-                <div class="cardes">
-                    <img src="./Dashboard/admin/<?php echo $row['image']; ?>" alt="" srcset="" height="300px"
-                        width="300px">
-                    <h4><?php echo $row['name']; ?></?>
-                    </h4>
-                    <p><?php echo $row['proffession'] ?></p>
-                    <p>+250<?php echo $row['phone'] ?></p>
-
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100 shadow-sm hover-shadow border-0">
+                        <div class="position-relative">
+                            <img src="./Dashboard/admin/<?php echo $row['image']; ?>" class="card-img-top" alt="<?php echo $row['name']; ?>"
+                                style="height: 300px; object-fit: cover;">
+                            <div class="position-absolute top-0 end-0 p-3">
+                                <span class="badge bg-success">Trainer</span>
+                            </div>
+                        </div>
+                        <div class="card-body text-center">
+                            <h4 class="card-title"><?php echo $row['name']; ?></h4>
+                            <p class="card-text text-muted mb-2"><?php echo $row['proffession'] ?></p>
+                            <div class="d-flex align-items-center justify-content-center">
+                                <i class="bi bi-telephone me-2 text-primary"></i>
+                                <p class="mb-0">+250<?php echo $row['phone'] ?></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <?php }
                 } ?>
-
-
-
-
-            </div><!-- End Team Member -->
-        </div>
+            </div>
 
         </div>
     </section><!-- /Team Section -->

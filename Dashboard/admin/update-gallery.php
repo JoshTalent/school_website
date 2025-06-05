@@ -66,7 +66,7 @@
               <h5 class="card-title">Update School Gallery</h5>
 
               <!-- General Form Elements -->
-              <form method="post" enctype="multipart/form-data">
+              <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
               <?php 
                include('../component/connection.php');
                     $sql = "SELECT * FROM `gallery` WHERE `id`='$edit_id'";
@@ -75,40 +75,51 @@
 
                     while ($row = mysqli_fetch_array($check)) {
                 ?>
-                <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">Title Gallery</label>
+                <div class="row mb-4">
+                  <label for="galleryTitle" class="col-sm-2 col-form-label fw-bold">Title Gallery</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="title" value="<?php echo $row['title'] ?>">
+                    <input type="text" id="galleryTitle" class="form-control shadow-sm" name="title" value="<?php echo $row['title'] ?>" required>
+                    <div class="invalid-feedback">Please provide a gallery title.</div>
                   </div>
                 </div>
                
-                <div class="row mb-3">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Choose Category Gallery</label>
+                <div class="row mb-4">
+                    <label for="galleryType" class="col-sm-2 col-form-label fw-bold">Choose Category Gallery</label>
                     <div class="col-sm-10">
-                      <select name="type"  class="form-control" value="<?php echo $row['type'] ?>">
-                        <option selected> -- Choose --</option>
-                        <option value="">Best Perfomer</option>
-                        <option value="">Gallery</option>
+                      <select name="type" id="galleryType" class="form-select shadow-sm" required>
+                        <option disabled>-- Choose --</option>
+                        <option value="best" <?php echo ($row['type'] == 'best') ? 'selected' : ''; ?>>Best Perfomer</option>
+                        <option value="gallery" <?php echo ($row['type'] == 'gallery') ? 'selected' : ''; ?>>Gallery</option>
                       </select>
+                      <div class="invalid-feedback">Please select a category.</div>
                     </div>
                   </div>
                 
-                <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Thumbnail Image</label>
+                <div class="row mb-4">
+                  <label for="thumbnailFile" class="col-sm-2 col-form-label fw-bold">Thumbnail Image</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="file" id="formFile" name="thumbnail" value="<?php echo $row['thumbnail'] ?>">
+                    <input class="form-control shadow-sm" type="file" id="thumbnailFile" name="thumbnail">
+                    <small class="text-muted">Current: <?php echo basename($row['thumbnail']); ?></small>
+                    <div class="invalid-feedback">Please choose a thumbnail image.</div>
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Image</label>
+                <div class="row mb-4">
+                  <label for="mainImage" class="col-sm-2 col-form-label fw-bold">Main Image</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="file" id="formFile" image="image" value="<?php echo $row['image'] ?>">
+                    <input class="form-control shadow-sm" type="file" id="mainImage" name="image">
+                    <small class="text-muted">Current: <?php echo basename($row['image']); ?></small>
+                    <div class="invalid-feedback">Please choose a main image.</div>
                   </div>
                 </div>
                 <?php } ?>
-                <div class="row mb-5 mt-4">
-                    <button type="submit" class="btn btn-primary" name="save">Submit Form</button>
+
+                <div class="row mb-4">
+                  <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm" name="save">
+                      <i class="bi bi-cloud-arrow-up me-2"></i>Update Gallery
+                    </button>
+                  </div>
                 </div>
                 <?php
                     if (isset($_POST['save'])) {

@@ -63,17 +63,31 @@
             while ($row = mysqli_fetch_array($query)) {
             ?>
 
-        <div class="col-lg-4 ">
+        <div class="col-lg-4">
           <!-- Card with an image on top -->
-          <div class="card">
-            <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="...">
+          <div class="card shadow-sm hover-shadow h-100">
+            <div class="position-relative">
+              <img src="<?php echo $row['image']; ?>" class="card-img-top" alt="Staff Image" style="height: 250px; object-fit: cover;">
+              <div class="position-absolute top-0 end-0 p-3">
+                <span class="badge bg-primary shadow"><?php echo $row['category']; ?></span>
+              </div>
+            </div>
             <div class="card-body">
-              <h5 class="card-title"><?php echo $row['name']; ?></h5>
-              <p class="card-text"><?php echo $row['proffession'] ?></p>
-              <a href="update-user.php?update_id= <?php echo $row['id']; ?>" class="btn btn-info m-2"><i
-                                    class="bi bi-pencil-square"></i>Edit</a>
-              <a href="delete-stuff.php?delete_id= <?php echo $row['id']; ?>" class="btn btn-danger m-2"><i
-                                    class="bi bi-trash"></i>Delete</a>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title text-primary mb-0"><?php echo $row['name']; ?></h5>
+                <span class="badge bg-light text-dark">
+                  <i class="bi bi-telephone me-1"></i><?php echo $row['phone']; ?>
+                </span>
+              </div>
+              <p class="card-text text-muted mb-4"><?php echo $row['proffession'] ?></p>
+              <div class="d-flex justify-content-between gap-2">
+                <a href="update-user.php?update_id= <?php echo $row['id']; ?>" class="btn btn-outline-info flex-grow-1 shadow-sm">
+                  <i class="bi bi-pencil-square me-2"></i>Edit
+                </a>
+                <a href="delete-stuff.php?delete_id= <?php echo $row['id']; ?>" class="btn btn-outline-danger flex-grow-1 shadow-sm">
+                  <i class="bi bi-trash me-2"></i>Delete
+                </a>
+              </div>
             </div>
           </div><!-- End Card with an image on top -->
         </div>

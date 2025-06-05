@@ -61,42 +61,52 @@
               <h5 class="card-title">Add School Gallery</h5>
 
               <!-- General Form Elements -->
-              <form method="post" enctype="multipart/form-data">
+              <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
-                <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">Title Gallery</label>
+                <div class="row mb-4">
+                  <label for="inputText" class="col-sm-2 col-form-label fw-bold">Title Gallery</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" class="form-control shadow-sm" name="title" required>
+                    <div class="invalid-feedback">Please provide a title.</div>
                   </div>
                 </div>
                
-                <div class="row mb-3">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Choose Category Gallery</label>
+                <div class="row mb-4">
+                    <label for="inputPassword" class="col-sm-2 col-form-label fw-bold">Choose Category Gallery</label>
                     <div class="col-sm-10">
-                      <select name="type" id="" class="form-control">
-                        <option selected> -- Choose --</option>
+                      <select name="type" class="form-select shadow-sm" required>
+                        <option value="" selected disabled> -- Choose --</option>
                         <option value="best">Best Perfomer</option>
                         <option value="gallery">Gallery</option>
                       </select>
+                      <div class="invalid-feedback">Please select a category.</div>
                     </div>
                   </div>
                 
-                <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Thumbnail Image</label>
+                <div class="row mb-4">
+                  <label for="formFile" class="col-sm-2 col-form-label fw-bold">Thumbnail Image</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="file" id="formFile" name="thumbnail">
+                    <input class="form-control shadow-sm" type="file" id="formFile" name="thumbnail" required>
+                    <div class="invalid-feedback">Please choose a thumbnail image.</div>
+                    <small class="text-muted">Recommended size: 800x600px</small>
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Image</label>
+                <div class="row mb-4">
+                  <label for="formFileMain" class="col-sm-2 col-form-label fw-bold">Image</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="file" id="formFile" image="image">
+                    <input class="form-control shadow-sm" type="file" id="formFileMain" name="image" required>
+                    <div class="invalid-feedback">Please choose a main image.</div>
+                    <small class="text-muted">Recommended size: 1200x800px</small>
                   </div>
                 </div>
 
-                <div class="row mb-5 mt-4">
-                    <button type="submit" class="btn btn-primary" name="save">Submit Form</button>
+                <div class="row mb-4">
+                  <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm" name="save">
+                      <i class="bi bi-cloud-upload me-2"></i>Submit Form
+                    </button>
+                  </div>
                 </div>
 
                 <?php

@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,24 +66,28 @@
             ?>
         <div class="col-lg-6">
           <!-- Card with an image on top -->
-          <a href="<?php echo $row['image']; ?>" class=" rounded-3 "
-          data-sub-html='<h6 class="fs-sm text-light">Gallery image caption</h6>'>
-            <div class="card">
-              <img src="<?php echo $row['thumbnail']; ?>" class="card-img card" style="height:350px; object-fit:cover" alt="...">
+          <a href="<?php echo $row['image']; ?>" class="text-decoration-none">
+            <div class="card shadow-sm hover-shadow h-100">
+              <div class="position-relative">
+                <img src="<?php echo $row['thumbnail']; ?>" class="card-img" style="height:350px; object-fit:cover" alt="Gallery Image">
+                <div class="position-absolute top-0 end-0 p-3">
+                  <span class="badge bg-primary shadow"><?php echo $row['type']; ?></span>
+                </div>
+              </div>
               <div class="card-body">
-                <h5 class="card-title"><?php echo $row['title']; ?></h5>
-                <p class="card-text col-12 text-center">
-                <button class="btn col-5 btn-danger">
-                  <a href="delete-gallery.php?delete_id=<?php echo $row['id']; ?>" class="text-white">
-                        delete
+                <h5 class="card-title text-primary mb-4"><?php echo $row['title']; ?></h5>
+                <div class="d-flex justify-content-between gap-2">
+                  <button class="btn btn-outline-danger flex-grow-1 shadow-sm">
+                    <a href="delete-gallery.php?delete_id=<?php echo $row['id']; ?>" class="text-danger text-decoration-none">
+                      <i class="bi bi-trash me-2"></i>Delete
                     </a>
-                </button>
-                <button class="btn col-5 btn-success">
-                    <a href="update-gallery.php?update_id=<?php echo $row['id']; ?>" class="text-white">
-                        update
+                  </button>
+                  <button class="btn btn-outline-success flex-grow-1 shadow-sm">
+                    <a href="update-gallery.php?update_id=<?php echo $row['id']; ?>" class="text-success text-decoration-none">
+                      <i class="bi bi-pencil-square me-2"></i>Update
                     </a>
-                </button>
-                </p>
+                  </button>
+                </div>
               </div>
             </div><!-- End Card with an image on top -->
           </a>

@@ -60,88 +60,93 @@ session_start();
         <section class="section register d-flex flex-column align-items-center justify-content-center main-form">
             <div class="container">
                 <div class="row justify-content-center">
+                    <div class="col-lg-7">
+                        <div class="card shadow-lg border-0 rounded-lg mt-4">
+                            <div class="card-body p-4">
+                                <div class="text-center mb-4">
+                                    <h4 class="fw-bold">School Administrator Login</h4>
+                                    <p class="text-muted">Enter your credentials to access the dashboard</p>
+                                </div>
 
-                    <div class="col-lg-7 ">
-                        <div class="card-body body-form">
-
-                            <div class="pt-4 pb-2">
-                                <h5 class="card-title text-center pb-0 fs-4">Only school administrator</h5>
-                                <p class="text-center small">Enter your email address &amp; password to login</p>
-                            </div>
-
-                            <form class="row g-3 p-4 needs-validation" method="post">
-
-                                <div class="col-12">
-                                    <label for="yourUsername" class="form-label">Email Address</label>
-                                    <div class="input-group has-validation">
-                                        <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                        <input type="email" name="data" class="form-control" id="yourUsername"
-                                            required="">
-                                        <div class="invalid-feedback">Please enter your username.</div>
+                                <form class="row g-3 needs-validation" method="post" novalidate>
+                                    <div class="col-12">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                                            <input type="email" name="data" class="form-control" id="email"
+                                                placeholder="name@example.com" required>
+                                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="col-12">
-                                    <label for="yourPassword" class="form-label">Password</label>
-                                    <input type="password" name="ndata" class="form-control" id="yourPassword"
-                                        required="">
-                                    <div class="invalid-feedback">Please enter your password!</div>
-                                </div>
-
-                                <div class="col-12">
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" value="true"
-                                            id="rememberMe">
-                                        <label class="form-check-label" for="rememberMe">Remember me</label>
+                                    <div class="col-12">
+                                        <label for="password" class="form-label">Password</label>
+                                        <div class="input-group has-validation">
+                                            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                                            <input type="password" name="ndata" class="form-control" id="password"
+                                                placeholder="Enter your password" required>
+                                            <div class="invalid-feedback">Please enter your password.</div>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100" type="submit" name="save">Login</button>
-                                </div>
 
-                            </form>
-                            <?php
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" name="remember" value="true"
+                                                id="rememberMe">
+                                            <label class="form-check-label text-muted" for="rememberMe">
+                                                Remember me on this device
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <button class="btn btn-primary w-100 py-2" type="submit" name="save">
+                                            <i class="bi bi-box-arrow-in-right me-2"></i>Sign In
+                                        </button>
+                                    </div>
+                                </form>
+                                <?php
 
 
 
 
-                            if (isset($_POST['save'])) {
+                                if (isset($_POST['save'])) {
 
 
-                                $data = $_POST['data'];
-                                $ndata = md5($_POST['ndata']);
+                                    $data = $_POST['data'];
+                                    $ndata = md5($_POST['ndata']);
 
-                                if ("SELECT * FROM `school_info` WHERE `email` ='$data'  and  `password`='$ndata' ") {
+                                    if ("SELECT * FROM `school_info` WHERE `email` ='$data'  and  `password`='$ndata' ") {
 
-                                    $check = mysqli_query($con, "SELECT * FROM `school_info` WHERE `email` ='$data'  and  `password`='$ndata' ");
+                                        $check = mysqli_query($con, "SELECT * FROM `school_info` WHERE `email` ='$data'  and  `password`='$ndata' ");
 
-                                    $row = mysqli_num_rows($check);
+                                        $row = mysqli_num_rows($check);
 
-                                    if ($row == 1) {
-                                        $_SESSION['email'] = $data;
-                            ?>
-                            <script>
-                            window.location.href = "./Dashboard/admin/index.php";
-                            </script>
-                            <?php
+                                        if ($row == 1) {
+                                            $_SESSION['email'] = $data;
+                                ?>
+                                <script>
+                                window.location.href = "./Dashboard/admin/index.php";
+                                </script>
+                                <?php
 
-                                    } else {
-                                    ?>
-                            <script>
-                            alert("Incorrect Credentioals Please Try Again")
-                            </script>
-                            <?php
+                                        } else {
+                                        ?>
+                                <script>
+                                alert("Incorrect Credentioals Please Try Again")
+                                </script>
+                                <?php
+                                        }
                                     }
                                 }
-                            }
 
-                            ?>
+                                ?>
 
+                            </div>
                         </div>
                     </div>
-
                 </div>
-
+            </div>
         </section>
 
     </main>

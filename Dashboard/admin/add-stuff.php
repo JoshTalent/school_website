@@ -60,73 +60,83 @@
               <h5 class="card-title">Add Stuff Members</h5>
 
               <!-- General Form Elements -->
-              <form method="Post" enctype="multipart/form-data">
-                <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">Name</label>
+              <form method="Post" enctype="multipart/form-data" class="needs-validation" novalidate>
+                <div class="row mb-4">
+                  <label for="inputName" class="col-sm-2 col-form-label fw-bold">Name</label>
                   <div class="col-sm-10">
-                    <input type="text"  name="names" class="form-control">
+                    <input type="text" id="inputName" name="names" class="form-control shadow-sm" required>
+                    <div class="invalid-feedback">Please provide a name.</div>
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                <div class="row mb-4">
+                  <label for="inputEmail" class="col-sm-2 col-form-label fw-bold">Email</label>
                   <div class="col-sm-10">
-                    <input type="email"  name="email" class="form-control">
+                    <input type="email" id="inputEmail" name="email" class="form-control shadow-sm" required>
+                    <div class="invalid-feedback">Please provide a valid email.</div>
                   </div>
                 </div>
-                <div class="row mb-3">
-                  <label for="inputPassword" class="col-sm-2 col-form-label">Phone Number</label>
+                <div class="row mb-4">
+                  <label for="inputPhone" class="col-sm-2 col-form-label fw-bold">Phone Number</label>
                   <div class="col-sm-10">
-                    <input type="phone"  name="phone" class="form-control">
+                    <input type="tel" id="inputPhone" name="phone" class="form-control shadow-sm" required>
+                    <div class="invalid-feedback">Please provide a phone number.</div>
                   </div>
                 </div>
-                <div class="row mb-3">
-                    <label for="inputPassword" class="col-sm-2 col-form-label">Choose Category</label>
+                <div class="row mb-4">
+                    <label for="inputCategory" class="col-sm-2 col-form-label fw-bold">Choose Category</label>
                     <div class="col-sm-10">
-                      <select name="category" id="" class="form-control">
-                        <option value="">Trainer</option>
-                        <option value="">Administrator</option>
+                      <select name="category" id="inputCategory" class="form-select shadow-sm" required>
+                        <option value="" selected disabled>-- Select Category --</option>
+                        <option value="trainer">Trainer</option>
+                        <option value="administrator">Administrator</option>
                       </select>
+                      <div class="invalid-feedback">Please select a category.</div>
                     </div>
                   </div>
 
-                  <fieldset class="row mb-3">
-                    <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+                  <fieldset class="row mb-4">
+                    <legend class="col-form-label col-sm-2 pt-0 fw-bold">Gender</legend>
                     <div class="col-sm-10">
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" id="gridRadios1" value="male" checked>
+                        <input class="form-check-input shadow-sm" type="radio" name="gender" id="gridRadios1" value="male" checked>
                         <label class="form-check-label" for="gridRadios1">
                           Male
                         </label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="female">
+                        <input class="form-check-input shadow-sm" type="radio" name="gender" id="gridRadios2" value="female">
                         <label class="form-check-label" for="gridRadios2">
                           Female
                         </label>
                       </div>
-  
                     </div>
                   </fieldset>
  
-                <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">File Upload</label>
+                <div class="row mb-4">
+                  <label for="formFile" class="col-sm-2 col-form-label fw-bold">Profile Image</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="file" id="formFile"  name="image">
+                    <input class="form-control shadow-sm" type="file" id="formFile" name="image" required>
+                    <div class="invalid-feedback">Please choose a profile image.</div>
+                    <small class="text-muted">Recommended size: 400x400px, Max size: 2MB</small>
                   </div>
                 </div>
 
-
-                <div class="row mb-3">
-                  <label for="inputPassword" class="col-sm-2 col-form-label">Profession </label>
+                <div class="row mb-4">
+                  <label for="inputProfession" class="col-sm-2 col-form-label fw-bold">Profession</label>
                   <div class="col-sm-10">
-                    <textarea class="form-control"  name="pro" style="height: 100px"></textarea>
+                    <textarea class="form-control shadow-sm" id="inputProfession" name="pro" style="height: 100px" required></textarea>
+                    <div class="invalid-feedback">Please provide profession details.</div>
                   </div>
                 </div>
 
-                <div class="row mb-5">
-                  
-                    <button type="submit"  name="save" class="btn btn-primary">Submit Form</button>
+                <div class="row mb-4">
+                  <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" name="save" class="btn btn-primary px-4 py-2 shadow-sm">
+                      <i class="bi bi-person-plus me-2"></i>Add Staff Member
+                    </button>
+                  </div>
                 </div>
+
                 <?php
                 $con = mysqli_connect("localhost", "root", "", "school");
 

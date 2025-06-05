@@ -63,24 +63,31 @@ include('../component/connection.php');
               <h5 class="card-title">School Archive</h5>
 
               <!-- General Form Elements -->
-              <form method="post" enctype="multipart/form-data">
+              <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
-                <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">Title Documents</label>
+                <div class="row mb-4">
+                  <label for="docTitle" class="col-sm-2 col-form-label fw-bold">Title Documents</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" id="docTitle" class="form-control shadow-sm" name="title" required>
+                    <div class="invalid-feedback">Please provide a document title.</div>
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <label for="inputNumber" class="col-sm-2 col-form-label">Documents Image</label>
+                <div class="row mb-4">
+                  <label for="docImage" class="col-sm-2 col-form-label fw-bold">Documents Image</label>
                   <div class="col-sm-10">
-                    <input class="form-control" type="file" id="formFile" image="image">
+                    <input class="form-control shadow-sm" type="file" id="docImage" name="image" required>
+                    <div class="invalid-feedback">Please choose a document image.</div>
+                    <small class="text-muted">Supported formats: PDF, JPG, PNG. Max size: 5MB</small>
                   </div>
                 </div>
 
-                <div class="row mb-5 mt-4">
-                    <button type="submit" class="btn btn-primary" name="save">School Archive</button>
+                <div class="row mb-4">
+                  <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm" name="save">
+                      <i class="bi bi-file-earmark-arrow-up me-2"></i>Upload Archive
+                    </button>
+                  </div>
                 </div>
                 <?php
                     if (isset($_POST['save'])) {

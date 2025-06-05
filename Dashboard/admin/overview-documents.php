@@ -60,40 +60,43 @@ include('../component/connection.php');
                 while ($row = mysqli_fetch_array($query)) {
                 ?>
      <div class="col-lg-4">
-
-        <div class="card">
+        <div class="card h-100 shadow-sm hover-shadow">
         <div class="card-body">
-            <h5 class="card-title"><?php echo $row['title']; ?></h5>
-            <p max-length="100"><?php echo $row['discription'];?></p>
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="card-title mb-0 text-primary"><?php echo $row['title']; ?></h5>
+                <span class="badge bg-light text-dark">Document</span>
+            </div>
+            <p class="text-muted mb-3" style="max-height: 60px; overflow: hidden;"><?php echo $row['discription'];?></p>
             <!-- Vertically centered Modal -->
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#verticalycentered">
-            Overview
+            <button type="button" class="btn btn-outline-primary w-100 shadow-sm" data-bs-toggle="modal" data-bs-target="#verticalycentered">
+                <i class="bi bi-file-earmark-text me-2"></i>View Document
             </button>
             <div class="modal fade" id="verticalycentered" tabindex="-1" style="display: none;" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content shadow">
                 <div class="modal-header">
-                    <h5 class="modal-title"><?php echo $row['title']; ?></h5>
+                    <h5 class="modal-title fw-bold"><?php echo $row['title']; ?></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                <embed src="<?php echo $row['image']; ?>" type="" width="100%">
-            
+                <div class="modal-body bg-light p-3">
+                    <embed src="<?php echo $row['image']; ?>" type="" width="100%" height="600px" class="border rounded shadow-sm">
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-danger">
-                    <a href="delete-document.php?delete_id= <?php echo $row['id']; ?>" class="text-white" >delete</a>
+                    <button type="button" class="btn btn-secondary shadow-sm" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-2"></i>Close
+                    </button>
+                    <button type="button" class="btn btn-danger shadow-sm">
+                        <a href="delete-document.php?delete_id= <?php echo $row['id']; ?>" class="text-white text-decoration-none">
+                            <i class="bi bi-trash me-2"></i>Delete
+                        </a>
                     </button>
                 </div>
                 </div>
             </div>
             </div><!-- End Vertically centered Modal-->
-
         </div>
         </div>
-
-        </div>
+     </div>
 
     <?php } ?>
     

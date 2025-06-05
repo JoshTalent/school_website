@@ -68,34 +68,45 @@
                 </div>
 
                 <div class="col-lg-8">
-                    <form method="post" class="form" data-aos="fade-up" data-aos-delay="200" action="">
+                    <form method="post" class="form needs-validation" data-aos="fade-up" data-aos-delay="200" novalidate>
                         <div class="row gy-4">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" name="name" class="form-control shadow-sm" id="floatingName" placeholder="Your Name" required>
+                                    <label for="floatingName">Your Name</label>
+                                    <div class="invalid-feedback">Please enter your name</div>
+                                </div>
+                            </div>
 
                             <div class="col-md-6">
-                                <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
-                            </div>
-
-                            <div class="col-md-6 ">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                    required="">
-                            </div>
-
-                            <div class="col-md-12">
-                                <input type="text" class="form-control" name="subject" placeholder="Subject"
-                                    required="">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control shadow-sm" name="email" id="floatingEmail" placeholder="Your Email" required>
+                                    <label for="floatingEmail">Your Email</label>
+                                    <div class="invalid-feedback">Please enter a valid email</div>
+                                </div>
                             </div>
 
                             <div class="col-md-12">
-                                <textarea class="form-control" name="message" rows="6" placeholder="Message"
-                                    required=""></textarea>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control shadow-sm" name="subject" id="floatingSubject" placeholder="Subject" required>
+                                    <label for="floatingSubject">Subject</label>
+                                    <div class="invalid-feedback">Please enter a subject</div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control shadow-sm" name="message" id="floatingMessage" style="height: 150px" placeholder="Message" required></textarea>
+                                    <label for="floatingMessage">Message</label>
+                                    <div class="invalid-feedback">Please enter your message</div>
+                                </div>
                             </div>
 
                             <div class="col-md-12 text-center">
-
-                                <button type="submit" name="save" class="btn btn-primary rounded-4">Send
-                                    Message</button>
+                                <button type="submit" name="save" class="btn btn-primary btn-lg px-5 py-3 shadow">
+                                    <i class="bi bi-send me-2"></i>Send Message
+                                </button>
                             </div>
-
                         </div>
                         <?php
                         $con = mysqli_connect("localhost", "root", "", "school");

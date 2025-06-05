@@ -61,25 +61,31 @@
               <h5 class="card-title">Add School Notifaction</h5>
 
               <!-- General Form Elements -->
-              <form method="post" enctype="multipart/form-data">
+              <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
 
-                <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label">Title </label>
+                <div class="row mb-4">
+                  <label for="notifTitle" class="col-sm-2 col-form-label fw-bold">Title</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" id="notifTitle" class="form-control shadow-sm" name="title" required>
+                    <div class="invalid-feedback">Please provide a notification title.</div>
                   </div>
                 </div>
 
-                <div class="row mb-3">
-                  <label for="inputText" class="col-sm-2 col-form-label"> Notification</label>
+                <div class="row mb-4">
+                  <label for="notifContent" class="col-sm-2 col-form-label fw-bold">Notification</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" name="notification">
+                    <textarea id="notifContent" class="form-control shadow-sm" name="notification" rows="4" required></textarea>
+                    <div class="invalid-feedback">Please provide notification content.</div>
+                    <small class="text-muted">Write a clear and concise notification message.</small>
                   </div>
                 </div>
-               
 
-                <div class="row mb-5 mt-4">
-                    <button type="submit" class="btn btn-primary" name="save">Submit Form</button>
+                <div class="row mb-4">
+                  <div class="col-sm-10 offset-sm-2">
+                    <button type="submit" class="btn btn-primary px-4 py-2 shadow-sm" name="save">
+                      <i class="bi bi-bell me-2"></i>Publish Notification
+                    </button>
+                  </div>
                 </div>
 
                      <?php
