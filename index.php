@@ -287,13 +287,13 @@
                     <h5 class="fw-medium fs-lg mb-1">Josue NTWARI</h5>
                     <p class="fs-sm mb-3">Backend Developer & Director</p>
                     <div class="d-flex justify-content-center">
-                        <a href="#" class="btn btn-icon btn-outline-secondary btn-facebook btn-sm me-2">
-                            <i class="bi bi-facebook"></i>
+                        <a href="https://github.com/JoshTalent" class="btn btn-icon btn-outline-secondary btn-facebook btn-sm me-2">
+                            <i class="bi bi-github"></i>
                         </a>
-                        <a href="#" class="btn btn-icon btn-outline-secondary btn-dribbble btn-sm me-2">
+                        <a href="https://www.instagram.com/josh_talent__" class="btn btn-icon btn-outline-secondary btn-dribbble btn-sm me-2">
                             <i class="bi bi-instagram"></i>
                         </a>
-                        <a href="#" class="btn btn-icon btn-outline-secondary btn-linkedin btn-sm">
+                        <a href="https://rw.linkedin.com/in/josue-ntwari-111289338" class="btn btn-icon btn-outline-secondary btn-linkedin btn-sm">
                             <i class="bi bi-linkedin"></i>
                         </a>
                     </div>
@@ -306,7 +306,7 @@
                     <p class="fs-sm mb-3">Frontend Develeper & Manager</p>
                     <div class="d-flex justify-content-center">
                         <a href="#" class="btn btn-icon btn-outline-secondary btn-facebook btn-sm me-2">
-                            <i class="bi bi-facebook"></i>
+                            <i class="bi bi-github"></i>
                         </a>
                         <a href="#" class="btn btn-icon btn-outline-secondary btn-dribbble btn-sm me-2">
                             <i class="bi bi-instagram"></i>

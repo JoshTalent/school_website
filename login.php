@@ -87,6 +87,9 @@ session_start();
                                                 placeholder="Enter your password" required>
                                             <div class="invalid-feedback">Please enter your password.</div>
                                         </div>
+                                        <div class="text-end mt-2">
+                                            <a href="reset-password.php" class="link-primary small text-decoration-none fw-semibold" style="transition: color 0.2s;">Forgot password?</a>
+                                        </div>
                                     </div>
 
                                     <div class="col-12">
@@ -106,10 +109,6 @@ session_start();
                                     </div>
                                 </form>
                                 <?php
-
-
-
-
                                 if (isset($_POST['save'])) {
 
 
@@ -141,7 +140,6 @@ session_start();
                                 }
 
                                 ?>
-
                             </div>
                         </div>
                     </div>
